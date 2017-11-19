@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>会员管理--会员数据</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style2.css" />
+		<link rel="stylesheet" href="../css/goods.css" />
+		<link rel="stylesheet" href="../css/dashboard.css" />
+		<script type="text/javascript" src="../js/jquery-3.0.0.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<style>
+		/*视口小于768px时*/
+			@media screen and (max-width:768px) {
+				body{
+					min-width:1500px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+				<a class="navbar-brand" href="#"><img src="../img/0561.png" style="margin-top:-8px;" /></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+
+					<li>
+						<a href="../substore.html">商品</a>
+					</li>
+					<li>
+						<a href="../dashboard.html">财务/订单</a>
+					</li>
+					<li>
+						<a href="../member.html" style="color: #FF4500;border-bottom: 2px solid #FF4500;">会员管理</a>
+					</li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#">用户名</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">设置 <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="shop/company.html">公司设置</a>
+							</li>
+							<li>
+								<a href="shop/personal.html">账号设置</a>
+							</li>
+							<li>
+								<a href="login.html">退出登录</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!--商品内容-->
+		<div class="goods" style="max-width:none !important;">
+			<div class="col-md-2 col-xs-2">
+				<!--左边导航-->
+				<div class="left-side">
+					<a>
+						<div class="dv sd"><span>会员管理</span></div>
+					</a>
+					<a href="#">
+						<div class="dv" style="color: blue;"><span>会员数据</span></div>
+					</a>
+					<a href="tag.html">
+						<div class="dv"><span>会员等级</span></div>
+					</a>
+					<a href="store_points.html">
+						<div class="dv"><span>积分规则</span></div>
+					</a>
+					<a href="points_apply.html">
+						<div class="dv"><span>积分使用</span></div>
+					</a>
+					<a href="../member.html">
+						<div class="dv"><span>会员管理</span></div>
+					</a>
+				</div>
+			</div>
+
+			<!--右边内容-->
+			<div class="col-md-10 col-xs-10">
+				<div class="right-side">
+					<div class="tabbable">
+						<!-- Only required for left/right tabs -->
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#tab1" data-toggle="tab">基本概况</a>
+							</li>
+							<li>
+								<a href="#tab2" data-toggle="tab">会员增减</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<!--基本概况-->
+							<div class="tab-pane active" id="tab1">
+								<div class="side-head" style="margin-top: 10px;">
+									<div class="col-md-2 col-xs-2">
+										<span class="b">0</span><br />
+										<span>会员总数</span>
+									</div>
+									<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+										<span class="b">0</span><br />
+										<span>已关注本店</span>
+									</div>
+									<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+										<span class="b">0</span><br />
+										<span>昨日新增用户</span>
+									</div>
+									<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+										<span class="b">0</span><br />
+										<span>领过优惠</span>
+									</div>
+								</div>
+
+								<!--饼状图-->
+								<div class="cake">
+									<!-- ECharts单文件引入 -->
+									<script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+									<div id="container" style="width:33.3%;height: 240px;float: left;box-sizing: border-box;"></div>
+									<script type="text/javascript">
+										// 基于准备好的dom，初始化echarts图表
+										var myChart = echarts.init(document.getElementById('container'));
+
+										var option = {
+											tooltip: {
+												trigger: 'item',
+												formatter: "{a} <br/>{b} : {c} ({d}%)"
+											},
+											legend: {
+												orient: 'vertical',
+												x: 'left',
+												data: ['分销用户', '普通用户']
+											},
+											toolbox: {
+												show: true,
+												feature: {
+													mark: {
+														show: true
+													},
+													dataView: {
+														show: true,
+														readOnly: false
+													},
+													magicType: {
+														show: true,
+														type: ['pie', 'funnel'],
+														option: {
+															funnel: {
+																x: '25%',
+																width: '50%',
+																funnelAlign: 'center',
+																max: 1548
+															}
+														}
+													},
+													restore: {
+														show: true
+													},
+													saveAsImage: {
+														show: true
+													}
+												}
+											},
+											calculable: true,
+											series: [{
+												name: '访问来源',
+												type: 'pie',
+												radius: ['50%', '70%'],
+												itemStyle: {
+													normal: {
+														label: {
+															show: false
+														},
+														labelLine: {
+															show: false
+														}
+													},
+													emphasis: {
+														label: {
+															show: true,
+															position: 'center',
+															textStyle: {
+																fontSize: '30',
+																fontWeight: 'bold'
+															}
+														}
+													}
+												},
+												data: [{
+													value: 115,
+													name: '分销用户'
+												}, {
+													value: 310,
+													name: '普通用户'
+												}]
+											}]
+										};
+
+										// 为echarts对象加载数据 
+										myChart.setOption(option);
+									</script>
+									<div id="containerss" style="width:33.3%;height:240px;float: left;box-sizing: border-box;"></div>
+									<script type="text/javascript">
+										// 基于准备好的dom，初始化echarts图表
+										var myChart = echarts.init(document.getElementById('containerss'));
+
+										var option = {
+											tooltip: {
+												trigger: 'item',
+												formatter: "{a} <br/>{b} : {c} ({d}%)"
+											},
+											legend: {
+												orient: 'vertical',
+												x: 'left',
+												data: ['无等级用户']
+											},
+											toolbox: {
+												show: true,
+												feature: {
+													mark: {
+														show: true
+													},
+													dataView: {
+														show: true,
+														readOnly: false
+													},
+													magicType: {
+														show: true,
+														type: ['pie', 'funnel'],
+														option: {
+															funnel: {
+																x: '25%',
+																width: '50%',
+																funnelAlign: 'center',
+																max: 1548
+															}
+														}
+													},
+													restore: {
+														show: true
+													},
+													saveAsImage: {
+														show: true
+													}
+												}
+											},
+											calculable: true,
+											series: [{
+												name: '访问来源',
+												type: 'pie',
+												radius: ['50%', '70%'],
+												itemStyle: {
+													normal: {
+														label: {
+															show: false
+														},
+														labelLine: {
+															show: false
+														}
+													},
+													emphasis: {
+														label: {
+															show: true,
+															position: 'center',
+															textStyle: {
+																fontSize: '30',
+																fontWeight: 'bold'
+															}
+														}
+													}
+												},
+												data: [{
+													value: 335,
+													name: '无等级用户'
+												}]
+											}]
+										};
+
+										// 为echarts对象加载数据 
+										myChart.setOption(option);
+									</script>
+									<div id="containers" style="width:33.3%;height:240px;float: left;box-sizing: border-box;"></div>
+									<script type="text/javascript">
+										// 基于准备好的dom，初始化echarts图表
+										var myChart = echarts.init(document.getElementById('containers'));
+
+										var option = {
+											tooltip: {
+												trigger: 'item',
+												formatter: "{a} <br/>{b} : {c} ({d}%)"
+											},
+											legend: {
+												orient: 'vertical',
+												x: 'left',
+												data: ['男', '女', '未知']
+											},
+											toolbox: {
+												show: true,
+												feature: {
+													mark: {
+														show: true
+													},
+													dataView: {
+														show: true,
+														readOnly: false
+													},
+													magicType: {
+														show: true,
+														type: ['pie', 'funnel'],
+														option: {
+															funnel: {
+																x: '25%',
+																width: '50%',
+																funnelAlign: 'center',
+																max: 1548
+															}
+														}
+													},
+													restore: {
+														show: true
+													},
+													saveAsImage: {
+														show: true
+													}
+												}
+											},
+											calculable: true,
+											series: [{
+												name: '访问来源',
+												type: 'pie',
+												radius: ['50%', '70%'],
+												itemStyle: {
+													normal: {
+														label: {
+															show: false
+														},
+														labelLine: {
+															show: false
+														}
+													},
+													emphasis: {
+														label: {
+															show: true,
+															position: 'center',
+															textStyle: {
+																fontSize: '30',
+																fontWeight: 'bold'
+															}
+														}
+													}
+												},
+												data: [{
+													value: 335,
+													name: '男'
+												}, {
+													value: 310,
+													name: '女'
+												}, {
+													value: 234,
+													name: '未知'
+												}]
+											}]
+										};
+
+										// 为echarts对象加载数据 
+										myChart.setOption(option);
+									</script>
+								</div>
+								<div class="col">
+									<div id="main" style="height:400px;"></div>
+									<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+									<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+									<script type="text/javascript">
+										// 路径配置
+										require.config({
+											paths: {
+												echarts: 'http://echarts.baidu.com/build/dist'
+											}
+										});
+
+										// 使用
+										require(
+											[
+												'echarts',
+												'echarts/chart/map' // 使用柱状图就加载bar模块，按需加载
+											],
+											function(ec) {
+												// 基于准备好的dom，初始化echarts图表
+												var myChart = ec.init(document.getElementById('main'));
+
+												var option = {
+													title: {
+														text: '会员分布',
+														subtext: '纯属虚构',
+														x: 'center'
+													},
+													tooltip: {
+														trigger: 'item'
+													},
+													legend: {
+														orient: 'vertical',
+														x: 'left',
+														data: ['分销用户', '普通用户', '无等级用户']
+													},
+													dataRange: {
+														min: 0,
+														max: 2500,
+														x: 'left',
+														y: 'bottom',
+														text: ['多', '少'], // 文本，默认为数值文本
+														calculable: true
+													},
+													toolbox: {
+														show: true,
+														orient: 'vertical',
+														x: 'right',
+														y: 'center',
+														feature: {
+															mark: {
+																show: true
+															},
+															dataView: {
+																show: true,
+																readOnly: false
+															},
+															restore: {
+																show: true
+															},
+															saveAsImage: {
+																show: true
+															}
+														}
+													},
+													roamController: {
+														show: true,
+														x: 'right',
+														mapTypeControl: {
+															'china': true
+														}
+													},
+													series: [{
+														name: '分销用户',
+														type: 'map',
+														mapType: 'china',
+														roam: false,
+														itemStyle: {
+															normal: {
+																label: {
+																	show: true
+																}
+															},
+															emphasis: {
+																label: {
+																	show: true
+																}
+															}
+														},
+														data: [{
+															name: '北京',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '天津',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '上海',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '重庆',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '河北',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '河南',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '云南',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '辽宁',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '黑龙江',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '湖南',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '安徽',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '山东',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '新疆',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '江苏',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '浙江',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '江西',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '湖北',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '广西',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '甘肃',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '山西',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '内蒙古',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '陕西',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '吉林',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '福建',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '贵州',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '广东',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '青海',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '西藏',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '四川',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '宁夏',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '海南',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '台湾',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '香港',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '澳门',
+															value: Math.round(Math.random() * 1000)
+														}]
+													}, {
+														name: '普通用户',
+														type: 'map',
+														mapType: 'china',
+														itemStyle: {
+															normal: {
+																label: {
+																	show: true
+																}
+															},
+															emphasis: {
+																label: {
+																	show: true
+																}
+															}
+														},
+														data: [{
+															name: '北京',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '天津',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '上海',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '重庆',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '河北',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '安徽',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '新疆',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '浙江',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '江西',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '山西',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '内蒙古',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '吉林',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '福建',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '广东',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '西藏',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '四川',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '宁夏',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '香港',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '澳门',
+															value: Math.round(Math.random() * 1000)
+														}]
+													}, {
+														name: '无等级用户',
+														type: 'map',
+														mapType: 'china',
+														itemStyle: {
+															normal: {
+																label: {
+																	show: true
+																}
+															},
+															emphasis: {
+																label: {
+																	show: true
+																}
+															}
+														},
+														data: [{
+															name: '北京',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '天津',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '上海',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '广东',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '台湾',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '香港',
+															value: Math.round(Math.random() * 1000)
+														}, {
+															name: '澳门',
+															value: Math.round(Math.random() * 1000)
+														}]
+													}]
+												};
+												// 为echarts对象加载数据 
+												myChart.setOption(option);
+											}
+										);
+									</script>
+								</div>
+							</div>
+							<!--会员增减-->
+							<div class="tab-pane" id="tab2">
+								<div class="side-head" style="margin-top: 10px;height: 50px;padding-top: 10px;font-family: '微软雅黑';">
+									<span>筛选日期：</span>
+									<script src="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+									<span><input type="text" id="d11" onclick="WdatePicker()"></span>
+									<span>至</span><span>
+								    <input type="text" id="d11" onclick="WdatePicker()">
+							       </span>
+									<span>快速查看：</span>
+									<span>最近7天&nbsp;</span>
+									<span>最近30天&nbsp;</span>
+									<span><button class="btn btn-primary btn-sm">筛选</button></span>
+								</div>
+								<div class="side-head" style="margin-top: 10px;height:70px;">
+									<div class="col-md-2 col-xs-2">
+										<span class="b">0</span><br />
+										<span>会员总数</span>
+									</div>
+									<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+										<span class="b">0</span><br />
+										<span>新增关注</span>
+									</div>
+									<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+										<span class="b">0</span><br />
+										<span>取消关注</span>
+									</div>
+									<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+										<span class="b">0</span><br />
+										<span>净增关注</span>
+									</div>
+								</div>
+								<div class="zhe">
+									<div class="col-md-12 col-xs-12"><b>微信会员关注统计（默认近七天）</b></div>
+									<div class="col-md-12 col-xs-12">
+										<div id="containe" style="height:300px;"></div>
+										<script>
+											$(function() {
+												$('#containe').highcharts({
+													title: {
+														text: '',
+														x: -20 //center
+													},
+													subtitle: {
+														text: '',
+														x: -20
+													},
+													xAxis: {
+														categories: ['2016-09-15', '2016-09-16', '2016-09-17', '2016-09-18', '2016-09-19', '2016-09-20', '2016-09-21']
+													},
+													yAxis: {
+														title: {
+															text: '下单笔数（个）'
+														},
+														plotLines: [{
+															value: 0,
+															width: 1,
+															color: '#808080'
+														}]
+													},
+													tooltip: {
+														valueSuffix: '个'
+													},
+													legend: {
+														layout: 'vertical',
+														align: 'right',
+														verticalAlign: 'middle',
+														borderWidth: 0
+													},
+													series: [{
+														name: '下单笔数',
+														data: [0, 0, 3, 4, 1, 3, 2]
+													}, {
+														name: '付款订单',
+														data: [0, 0, 3, 2, 4, 1, 3]
+													}, {
+														name: '发货订单',
+														data: [0, 4, 0, 1, 0, 1, 2]
+													}]
+												});
+											});
+										</script>
+									</div>
+									<div class="biao">
+										<table class="table table-bordered table-hover">
+											<caption><b>详细数据</b></caption>
+											<thead>
+												<tr>
+													<th>日期</th>
+													<th>新增粉丝</th>
+													<th>跑路粉丝</th>
+													<th>净增粉丝</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>2016-09-21</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>2016-09-20</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>2016-09-19</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>2016-09-18</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>2016-09-17</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>2016-09-16</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>2016-09-15</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="footer">
+					<span>@evxun.com</span>
+				</div>
+
+	</body>
+
+</html>

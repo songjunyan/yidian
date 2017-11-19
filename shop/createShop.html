@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="Generator" content="EditPlus®">
+		<title>创建店铺</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/shop.css" />
+		<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<style>
+		/*视口小于768px时*/
+			@media screen and (max-width:768px) {
+				body{
+					min-width:1500px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="top">
+			<div class="top left">
+				<img src="../img/0561.png" />
+			</div>
+			<div class="top right">
+				<span>创建我的店铺</span>
+			</div>
+		</div>
+		<!--内容-->
+		<div class="content" style="max-width:none !important;">
+			<div class="content-cont">
+				<div class="input-group" style="width: 100%;margin-top:40px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError">公司名称：</span>
+					<div class="col-lg-7 col-xs-7"><input type="text" class="form-control" placeholder="如果没有公司，请填写你的名字"></div>
+				</div>
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError">公司联系地址：</span>
+					&nbsp;&nbsp;&nbsp;
+					<select class="select">
+						<option>选择省份</option>
+						<option>河南</option>
+					</select>
+					<select class="select">
+						<option>选择城市</option>
+						<option>xx</option>
+					</select>
+					<select class="select">
+						<option>选择地区</option>
+						<option>xx</option>
+					</select>
+				</div>
+
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError"></span>
+					<div class="col-lg-7 col-xs-7"><input type="text" class="form-control" placeholder="请填写具体地址"></div>
+				</div>
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError">店铺名称：</span>
+					<div class="col-lg-7 col-xs-7"><input type="text" class="form-control" placeholder=""></div>
+				</div>
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError"></span>
+					<div class="col-lg-7 col-xs-7"><label>是写买家直接看到的店铺名称，认证后不可修改</label></div>
+				</div>
+
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError">主要类目：</span>
+					<div class="col-lg-7 col-xs-7">
+						<div class="col-sm-4 col-xs-4">
+							<div class="dropdown">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                                                                     选择地区
+                                     <span class="caret"></span>
+                                </button>
+								<div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+									
+									<label style="width:60px;">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" >女装
+                                    </label>
+								<label style="width:60px;">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" >男装
+                                    </label>
+                                    <label style="width:60px;">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" >酒水
+                                    </label>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError">经营人姓名：</span>
+					<div class="col-lg-7 col-xs-7"><input type="text" class="form-control" placeholder="请填写真是姓名"></div>
+				</div>
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError">经营人手机号：</span>
+					<div class="col-lg-7 col-xs-7"><input type="text" class="form-control" placeholder="请填写真是手机号，方便保持联系"></div>
+				</div>
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError">法人姓名：</span>
+					<div class="col-lg-7 col-xs-7"><input type="text" class="form-control" placeholder="请填写真是姓名"></div>
+				</div>
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError">经营人QQ号：</span>
+					<div class="col-lg-7 col-xs-7"><input type="text" class="form-control" placeholder="请填写你常用的QQ号"></div>
+				</div>
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError"></span>
+					<div class="col-lg-7 col-xs-7"><input type="checkbox">我已阅读并同意&nbsp;<a href="readme.html">易店代理销售服务和结算协议</a></div>
+				</div>
+				<div class="input-group" style="width: 100%;margin-top:10px;">
+					<span class="col-sm-3 col-xs-3 control-label" for="inputError"></span>
+					<div class="col-lg-7 col-xs-7">
+						<a href="attestation.html"><button class="btn btn-success">立即认证</button></a>
+						<a><button class="btn btn-success">创建公司和店铺</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<span>@evxun.com</span>
+		</div>
+	</body>
+
+</html>

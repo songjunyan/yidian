@@ -1,0 +1,193 @@
+a {
+	color: black;
+}
+
+.goods {
+	width: 80%;
+	height:800px;
+	margin: 0 auto;
+}
+
+.left-side {
+	margin-top: 10px;
+	width: 100%;
+	height:800px;
+	background: white;
+}
+
+.left-side .dv {
+	width: 100%;
+	height: 45px;
+	border: 1px;
+	border-bottom: 1px dotted #DBDBDB;
+	padding-left: 10%;
+}
+
+.sd {
+	background: #198BD4;
+	color: white;
+	font-size: 18px;
+}
+
+.left-side a {
+	text-decoration: none;
+	line-height: 45px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+
+.right-side {
+	width: 100%;
+	height: 800px;
+	margin-top: 10px;
+}
+.footer{
+	width: 100%;
+	height: 40px;
+	margin-top: 18px;
+	text-align: center;
+}
+.footer span{
+	line-height: 40px;
+}
+.right-side-content{
+	width: 100%;
+	height: auto;
+	background: white;
+	margin-top: 20px;
+}
+.first{
+	width: 100px;
+	height: 80px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 10px;
+}
+.first span{
+	font-family: "微软雅黑";
+	line-height: 80px;
+}
+.dis{
+	width: 100%;
+	height: 35px;
+}
+#info{
+	font-size: 16px;
+	
+}
+#info:hover{
+	color:#7FFF00;
+}
+.infos{
+	display: none;
+}
+.tabbable ul{
+	border:1px solid white;
+	background:#EEEEEE;
+	font-family: "微软雅黑";
+}
+.tabbable ul li{
+	border: 1px solid #D7D7D7;
+}
+.tab-pane1{
+	width: 100%;
+	height: 120px;
+	background: white;
+	margin-top:15px;
+}
+.tab-pane1-con{
+	width:100%;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+.tab-pane2{
+	width: 100%;
+	height: auto;
+	background: white;
+	margin-top: 20px;
+}
+.bai{
+	width: 100%;
+	height:40px;
+	text-align: center;
+}
+.bai span{
+	line-height:40px;
+}
+.tab-pane-con{
+	width: 100%;
+	height: 40px;
+	margin-top: 10px;
+}
+.table .table-hover{
+	font-family: "微软雅黑";
+}
+/*弹框*/
+body {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 12px;
+			margin: 0;
+		}
+		
+#main {
+			height: 1800px;
+			padding-top: 90px;
+			text-align: center;
+		}
+		
+#fullbg {
+			background-color: gray;
+			left: 0;
+			opacity: 0.5;
+			position: absolute;
+			top: 0;
+			z-index: 3;
+			filter: alpha(opacity=50);
+			-moz-opacity: 0.5;
+			-khtml-opacity: 0.5;
+		}
+		
+		#dialog {
+			background-color: #fff;
+			border: 5px solid rgba(0, 0, 0, 0.4);
+			height:500px;
+			left:35%;
+			margin: -200px 0 0 -200px;
+			padding: 1px;
+			position: fixed !important;
+			/* 浮动对话框 */
+			position: absolute;
+			top:42%;
+			width:800px;
+			z-index: 5;
+			border-radius: 5px;
+			display: none;
+		}
+		
+		#dialog p {
+			margin: 0 0 12px;
+			height: 24px;
+			width: 100%;
+			line-height: 24px;
+			background: #CCCCCC;
+			
+		}
+		#dialog p span{
+			float: left;
+			font-size: 14px;
+			color:black;
+		}
+		#dialog p.close {
+			text-align: right;
+			padding-right: 10px;
+			float: right;
+			height: 30px;
+			color:red;
+		}
+		
+		#dialog p.close a {
+			color: #555555;
+			text-decoration: none;
+			font-size: 14px;
+		}

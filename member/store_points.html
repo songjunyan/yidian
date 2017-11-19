@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>会员管理--会员数据</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style2.css" />
+		<link rel="stylesheet" href="../css/goods.css" />
+		<link rel="stylesheet" href="../css/dashboard.css" />
+		<script type="text/javascript" src="../js/jquery-3.0.0.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<style>
+		/*视口小于768px时*/
+			@media screen and (max-width:768px) {
+				body{
+					min-width:1500px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+				<a class="navbar-brand" href="#"><img src="../img/0561.png" style="margin-top:-8px;" /></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+
+					<li>
+						<a href="../substore.html">商品</a>
+					</li>
+					<li>
+						<a href="../dashboard.html">财务/订单</a>
+					</li>
+					<li>
+						<a href="../member.html" style="color: #FF4500;border-bottom: 2px solid #FF4500;">会员管理</a>
+					</li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#">用户名</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">设置 <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="shop/company.html">公司设置</a>
+							</li>
+							<li>
+								<a href="shop/personal.html">账号设置</a>
+							</li>
+							<li>
+								<a href="login.html">退出登录</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!--商品内容-->
+		<div class="goods" style="max-width:none !important;">
+			<div class="col-md-2 col-xs-2">
+				<!--左边导航-->
+				<div class="left-side">
+					<a>
+						<div class="dv sd"><span>会员管理</span></div>
+					</a>
+					<a href="statistic.html">
+						<div class="dv"><span>会员数据</span></div>
+					</a>
+					<a href="tag.html">
+						<div class="dv"><span>会员等级</span></div>
+					</a>
+					<a href="#">
+						<div class="dv" style="color: blue;"><span>积分规则</span></div>
+					</a>
+					<a href="points_apply.html">
+						<div class="dv"><span>积分使用</span></div>
+					</a>
+					<a href="../member.html">
+						<div class="dv"><span>会员管理</span></div>
+					</a>
+				</div>
+			</div>
+
+			<!--右边内容-->
+			<div class="col-md-10 col-xs-10">
+				<div class="right-side">
+					<div class="tabbable">
+						<!-- Only required for left/right tabs -->
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#tab1" data-toggle="tab">推广积分</a>
+							</li>
+							<li>
+								<a href="#tab2" data-toggle="tab">交易积分</a>
+							</li>
+							<li>
+								<a href="#tab3" data-toggle="tab">价值管理</a>
+							</li>
+							<li>
+								<a href="#tab4" data-toggle="tab">每日签到</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab1">
+								<button class="btn btn-primary" style="margin-top: 10px;">保存</button>
+								<div class="info1">
+									<span>用户分销商【积分】来源渠道</span>
+								</div>
+								<div class="info2">
+									<div class="col-md-10 col-xs-10">
+										<div class="ping1">
+											<span style="font-family: '微软雅黑';font-size: 16px;"><b>多级推广</b></span><span style="font-family: '微软雅黑';color: red;"><b>(绑定认证服务号此功能才会生效)</b></span>
+										</div>
+										<div class="ping1">
+											<div class="ping1-1">
+												<span><b>关注本店公众号，可获得积分</b>&nbsp;</span><input type="text" value="0" />
+											</div>
+											<div class="ping1-2">
+												<span><b>*关注获得积分</b></span>
+											</div>
+										</div>
+										<div class="ping1">
+											<div class="ping1-1">
+												<span><b>上一级推荐关注，可获得积分</b>&nbsp;</span><input type="text" value="0" />
+											</div>
+											<div class="ping1-2">
+												<span><b>*积分必须为正整数</b></span>
+											</div>
+										</div>
+										<div class="ping1">
+											<div class="ping1-1">
+												<span><b>上二级推荐关注，可获得积分</b>&nbsp;</span><input type="text" value="0" />
+											</div>
+											<div class="ping1-2">
+												<span><b>*推广等级采用分销设置等级，可获得佣金级别统一为三层</b></span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-2 col-xs-2">
+										<div id="div1" class="open1">
+											<div id="div2" class="open2"></div>
+										</div>
+										<script>
+											window.onload = function() {
+												var div2 = document.getElementById("div2");
+												var div1 = document.getElementById("div1");
+												div2.onclick = function() {
+													div1.className = (div1.className == "close1") ? "open1" : "close1";
+													div2.className = (div2.className == "close2") ? "open2" : "close2";
+												}
+											}
+										</script>
+									</div>
+								</div>
+								<div class="info2" style="height: 120px;">
+									<div class="col-md-10 col-xs-10">
+										<div class="ping1">
+											<span style="font-family: '微软雅黑';font-size: 16px;"><b>分享获得积分</b></span><br />
+											<span>需要开启“分享成为分销商”</span>&nbsp;<span class="btn" style="color:blue;"><b>快速点击</b></span>
+										</div><br />
+										<div class="ping1">
+											<span style="color:blue;"><b>分享点击数</b></span><input type="text" value="0" />
+											<span style="color:blue;">得分数</span><input type="text" value="0" />
+										</div>
+									</div>
+									<div class="col-md-2 col-xs-2">
+										<div id="div1" class="open1">
+											<div id="div2" class="open2"></div>
+										</div>
+				
+									</div>
+								</div>
+								<div class="info1">
+									<span>分销商专属 【分销积分】 来源渠道</span>
+								</div>
+								<div class="info2">
+									<div class="col-md-10 col-xs-10">
+										<div class="ping1">
+											<span style="font-family: '微软雅黑';font-size: 16px;"><b>发展分销商</b></span>
+										</div>
+										<div class="ping1">
+											<div class="ping1-1">
+												<span><b>成为本店分销商，可获得积分</b>&nbsp;</span><input type="text" value="0" />
+											</div>
+											<div class="ping1-2">
+												<span><b>*积分输入必须为正整数</b></span>
+											</div>
+										</div>
+										<div class="ping1">
+											<div class="ping1-1">
+												<span><b>发展下一级分销商，可获得积分</b>&nbsp;</span><input type="text" value="0" />
+											</div>
+											<div class="ping1-2">
+												<span><b>*积分必须为正整数</b></span>
+											</div>
+										</div>
+										<div class="ping1">
+											<div class="ping1-1">
+												<span><b>发展下二级分销商，可获得积分</b>&nbsp;</span><input type="text" value="0" />
+											</div>
+											<div class="ping1-2">
+												<span><b>*推广等级采用分销设置等级，可获得佣金级别统一为三层</b></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="tab2">
+								<button class="btn btn-primary" style="margin-top: 10px;">保存</button>
+								<div class="info1">
+									<span>用户分销商【积分】来源渠道</span>
+								</div>
+								<div class="info2" style="height: 100px;">
+									<div class="ping1">
+										<input type="radio" name="vel" /><span style="font-size: 18px;"><b>满送积分</b></span>
+									</div>
+									<div class="ping1">
+										<div class="ping1-1">
+											<span><b>单笔消费金额满</b>&nbsp;</span><input type="text" value="0" />元&nbsp;
+											<span><b>送积分</b>&nbsp;</span><input type="text" value="0" />
+										</div>
+										<div class="ping1-2">
+											<span><b>不满，不送。消费金额倍数，方可累计赠送</b></span>
+										</div>
+									</div>
+								</div>
+								<div class="info2" style="height: 120px;">
+									<div class="ping1">
+										<input type="radio" name="vel" /><span style="font-size: 18px;"><b>消费送积分</b></span>
+									</div>
+									<div class="ping1">
+										<div class="ping1-1" style="width: 70%;">
+											<span><b>实际消费金额，生成积分比例 消费金额：</b>&nbsp;<input type="text" value="0" />
+											<b>元&nbsp; 转化为1积分 (数额需为正整数)</b></span>
+											<br />
+											<span style="color: #B3B8C4;">*实际过程中，订单金额非整数时，积分取整数值部分 4.9积分 取4积分</span>
+										</div>
+									</div>
+								</div>
+								<div class="info1">
+									<span>分销商专属 【分销积分】 来源渠道</span>
+								</div>
+								<div class="info2">
+									<div class="ping1">
+										<span style="font-size: 18px;"><b>销售积分</b></span>
+									</div>
+									<div class="ping1">
+										<div class="ping1-1" style="width: 70%;">
+											<span><b>实际销售金额生成积分比例 【销售金额】 每</b>&nbsp;<input type="text" value="0" />
+											<b>元&nbsp; 兑换1积分 (比例需要正整数)</b></span>
+											<br />
+											<span style="color: #B3B8C4;">*实际过程中，订单金额非整数时，积分取整数值部分 4.9积分 取4积分</span>
+										</div>
+									</div>
+									<div class="ping1">
+										<div class="ping1-1" style="border-right: 0px;">
+											<span><b>上一级分销商 【分润金额】 每</b>&nbsp;<input type="text" value="0" />
+											<b>元&nbsp; 兑换1积分</b></span>
+										</div>
+									</div>
+									<div class="ping1">
+										<div class="ping1-1" style="border-right: 0px;">
+											<span><b>上二级分销商 【分润金额】 每</b>&nbsp;<input type="text" value="0" />
+											<b>元&nbsp; 兑换1积分</b></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="tab3">
+								<button class="btn btn-primary" style="margin-top: 10px;">保存</button>
+								<div class="info1">
+									<span>会员积分价值</span>
+								</div>
+								<div class="info2" style="height:90px;">
+									<div class="col-md-10 col-xs-10">
+										<div class="ping1">
+											<div class="ping1-1" style="border-right: 0px;">
+											<span><b>积分价值  每</b>&nbsp;<input type="text" value="0" />
+											<b>积分&nbsp; 可以折算抵现1元</b></span><br />
+											<span style="color: #B3B8C4;">*积分折算现金，积分数量为正整数。 </span>
+										</div>
+										</div>
+									</div>
+									<div class="col-md-2 col-xs-2">
+										<div id="div1" class="open1">
+											<div id="div2" class="open2"></div>
+										</div>
+									</div>
+								</div>
+								<div class="info2" style="height:70px;padding: 15px;">
+									<div class="ping1">
+										<input type="checkbox" name="vell" /><span style="color: blue;"><b>交易每单可抵用订单金额比例</b>
+										<input type="text" value="0.00" style="width: 100px;height: 30px;"/>%</span>
+									</div>
+								</div>
+								<div class="info2" style="height:70px;padding: 15px;">
+									<div class="ping1">
+										<input type="checkbox" name="vell" /><span style="color: blue;"><b>默认每单交易抵现上限 </b>
+										<input type="text" value="0"  style="width: 100px;height: 30px;"/>元</span>
+									</div>
+								</div>
+								<div class="info1">
+									<span>分销商积分价值</span>
+								</div>
+								<div class="info2" style="height:90px;padding: 20px;">
+									<div class="col-md-12 col-xs-12">
+										<span><b>提升自身的分销等级 </b></span><br /><br />
+										<span><b>分销等级和自身的分润相关 </b>&nbsp;</span>
+										<span style="color: red;"> 等级越高，分销的分润值越大</span>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="tab4">
+								<button class="btn btn-primary" style="margin-top: 10px;">保存</button>
+								<div class="info1">
+									<span>用户积分/分销商积分 签到获取</span>
+								</div>
+								<div class="info2" style="height:70px;">
+									<div class="col-md-10 col-xs-10">
+										<div class="ping1" style="margin-top: 20px;">
+											<div class="ping1-1" style="border-right: 0px;">
+											<span style="color:red;">*积分签到需要开启才能生效 </span>
+										</div>
+										</div>
+									</div>
+									<div class="col-md-2 col-xs-2">
+										<div id="div1" class="open1">
+											<div id="div2" class="open2"></div>
+										</div>
+										<script>
+											window.onload = function() {
+												var div2 = document.getElementById("div2");
+												var div1 = document.getElementById("div1");
+												div2.onclick = function() {
+													div1.className = (div1.className == "close1") ? "open1" : "close1";
+													div2.className = (div2.className == "close2") ? "open2" : "close2";
+												}
+											}
+										</script>
+									</div>
+								</div>
+								<div class="info2" style="height:100px;">
+									<div class="ping1">
+										<input type="radio" name="vel" /><span style="font-size: 18px;"><b>每日固定积分</b></span>
+									</div>
+									<div class="ping1">
+									<span style="color: blue;font-family: '微软雅黑';"><b>每日签到一次，签到积分</b></span><input type="text" value="0" style="height:30px;width: 100px;"/>
+									</div>
+								</div>
+								<div class="info2" style="height:160px;">
+									<div class="ping1">
+										<input type="radio" name="vel" /><span style="font-size: 18px;"><b>累计签到模式</b></span><br />
+										<span style="color: blue;font-family: '微软雅黑';">
+											<b>首次签到积分</b><input type="text" value="0"/>&nbsp;
+											<b>连续签到每日额外增加积分</b><input type="text" value="0"/>&nbsp;
+											<b>连续签到上限天数</b><input type="text" value="0"/>&nbsp;天
+										</span><br /><br />
+										<span style="color: #B3B8C4;"><b>* 比如：第一天签到5分，第二天签到5+5分，持续7天、第7天为5+6*5=35分；后续保持35分，不会再增加 </b> </span><br />
+										<span style="color: #B3B8C4;"><b>* 一旦中断持续签到，则从第一天重新计算</b> </span><br />
+										<span style="color:red;"><b>*只有在【累计签到模式】下，才会累计签到天数，切换为【每日固定积分】后，用户点击签到，则会将之前的累计天数清零</b></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="footer">
+				<span>@evxun.com</span>
+			</div>
+
+	</body>
+
+</html>

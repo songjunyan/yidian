@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>财务订单--到店自提订单</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style2.css" />
+		<link rel="stylesheet" href="../css/goods.css" />
+		<link rel="stylesheet" href="../css/dashboard.css" />
+		<script type="text/javascript" src="../js/jquery-3.0.0.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<style>
+		/*视口小于768px时*/
+			@media screen and (max-width:768px) {
+				body{
+					min-width:1500px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+				<a class="navbar-brand" href="#"><img src="../img/0561.png" style="margin-top:-8px;" /></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+
+					<li>
+						<a href="../substore.html">商品</a>
+					</li>
+					<li>
+						<a href="../dashboard.html" style="color: #FF4500;border-bottom: 2px solid #FF4500;">财务/订单</a>
+					</li>
+					<li>
+						<a href="../member.html">会员管理</a>
+					</li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#">用户名</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">设置 <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="shop/company.html">公司设置</a>
+							</li>
+							<li>
+								<a href="shop/personal.html">账号设置</a>
+							</li>
+							<li>
+								<a href="login.html">退出登录</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!--商品内容-->
+		<div class="goods" style="max-width: none !important;">
+			<div class="col-md-2 col-xs-2">
+				<!--左边导航-->
+				<div class="left-side">
+					<a href="../dashboard.html">
+						<div class="dv"><span>订单情况</span></div>
+					</a>
+					<a href="all.html">
+						<div class="dv"><span>所有订单</span></div>
+					</a>
+					<a href="#">
+						<div class="dv" style="color:blue;"><span>到店自提订单</span></div>
+					</a>
+					<a href="codpay.html">
+						<div class="dv"><span>货到付款订单</span></div>
+					</a>
+					<a href="codpay.html">
+						<div class="dv"><span>退货列表</span></div>
+					</a>
+					<a href="order_rights.html">
+						<div class="dv"><span>维权列表</span></div>
+					</a>
+					<a href="star.html">
+						<div class="dv"><span>加星订单</span></div>
+					</a>
+					<a href="activity.html">
+						<div class="dv"><span>活动订单</span></div>
+					</a>
+					<a href="delivery.html">
+						<div class="dv"><span>物流工具</span></div>
+					</a>
+					<a href="add.html">
+						<div class="dv"><span>添加订单</span></div>
+					</a>
+					<a href="orderprint.html">
+						<div class="dv"><span>订单打印机</span></div>
+					</a>
+					<a>
+						<div class="dv sd"><span>财务管理</span></div>
+					</a>
+					<a>
+						<div class="dv"><span>财务概况</span></div>
+					</a>
+					<a>
+						<div class="dv"><span>平台对账</span></div>
+					</a>
+					<a>
+						<div class="dv"><span>分销商对账</span></div>
+					</a>
+					<a>
+						<div class="dv"><span>供货商对账</span></div>
+					</a>
+					<a>
+						<div class="dv"><span>经销商对账</span></div>
+					</a>
+				</div>
+			</div>
+
+			<!--右边内容-->
+			<div class="col-md-10 col-xs-10">
+				<div class="right-side">
+					<div class="side-con1">
+						<div class="col-md-4 col-xs-4">
+							<span>支付流水号：</span><span><input type="text"/></span><br /><br />
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 订单号：</span><span><input type="text"/></span><br /><br />
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 交易号：</span><span><input type="text"/></span><br /><br />
+							<span>支付人姓名：</span><span><input type="text"/></span><br /><br />
+						</div>
+						<div class="col-md-8 col-xs-8">
+							<span>
+								<select>
+									<option>下单时间</option>
+									<option>付款时间</option>
+									<option>发货时间</option>
+									<option>签收时间</option>
+									<option>关闭 时间</option>
+									<option>退款时间</option>
+								</select>
+							</span>
+							<span>
+								<script src="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+								<span><input type="text" id="d11" onclick="WdatePicker()"></span>
+							<span>至</span><span>
+								<input type="text" id="d11" onclick="WdatePicker()">
+							</span>
+							<span class="seven" style="color: blue;">最近7天</span>&nbsp;<span class="thirty" style="color: blue;">最近30天</span><br /><br />
+							<div class="col-md-6 col-xs-6">
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;订货类型：</span><span>
+									<select style="width: 120px;">
+										<option>全部</option>
+										<option>普通订单</option>
+										<option>代付订单</option>
+										<option>分销订单</option>
+									</select>
+								</span><br /><br />
+								<span>收货人手机：</span><span>
+									<input type="text" style="width: 120px;"/>
+								</span><br /><br />
+								<span>&nbsp;&nbsp;&nbsp;所属活动：</span><span>
+									<select style="width: 120px;">
+										<option>团购</option>
+										<option>预售</option>
+										<option>超级砍价</option>
+										<option>一元夺宝</option>
+										<option>秒杀</option>
+										<option>降价拍</option>
+										<option>抽奖合集</option>
+										<option>摇一摇</option>
+										<option>微聚力</option>
+										<option>集字游戏</option>
+										<option>摇钱树游戏</option>
+										
+									</select>
+								</span>
+							</div>
+							<div class="col-md-6 col-xs-6">
+								<span>付款方式：</span>
+								<span>
+                                 	<select>
+                                 		<option>微信安全支付</option>
+                                 		<option>支付宝支付</option>
+                                 		<option>会员卡支付</option>
+                                 		<option>银行卡付款</option>
+                                 		<option>余额支付</option>
+                                 		<option>货到付款/到店付款</option>
+                                 		<option>找人代付</option>
+                                 	</select>
+                                 </span><br /><br />
+								<span>物流方式：</span>
+								<span>
+                                 	<select style="width: 125px;">
+                                 		<option>快递发货</option>
+                                 		<option>上门自取</option>                     
+                                 	</select>
+                                 </span><br /><br />
+								<button class="btn btn-primary">筛选</button>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="side-con2">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#tab1" data-toggle="tab">全部</a>
+							</li>
+							<li>
+								<a href="#tab2" data-toggle="tab">待付款</a>
+							</li>
+							<li>
+								<a href="#tab3" data-toggle="tab">待提货</a>
+							</li>
+							<li>
+								<a href="#tab4" data-toggle="tab">已完成</a>
+							</li>
+							<li>
+								<a href="#tab5" data-toggle="tab">已关闭</a>
+							</li>
+							<li>
+								<a href="#tab6" data-toggle="tab">退款中</a>
+							</li>
+							<li>
+								<a href="#tab7" data-toggle="tab">已自提</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<!--专题管理-->
+							<div class="tab-pane active" id="tab1">
+
+							</div>
+							<div class="tab-pane active" id="tab2">
+
+							</div>
+							<div class="tab-pane active" id="tab3">
+
+							</div>
+							<div class="tab-pane active" id="tab4">
+
+							</div>
+							<div class="tab-pane active" id="tab5">
+
+							</div>
+							<div class="tab-pane active" id="tab6">
+
+							</div>
+							<div class="tab-pane active" id="tab7">
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="footer">
+				<span>@evxun.com</span>
+			</div>
+	</body>
+
+</html>

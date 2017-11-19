@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>商品收藏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../css/font-awesome.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/line.css" />
+		<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+		<style>
+		/*视口小于768px时*/
+			@media screen and (max-width:768px) {
+				body{
+					min-width:1500px;
+				}
+			}
+			@media screen and (max-width:1000px) {
+				.hideitems {
+					display: none;
+				}
+			}
+			
+			.table th,
+			.table td {
+				text-align: center;
+				height: 38px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部导航-->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+					<a class="navbar-brand" href="#" style="font-size: 14px;"><span class="glyphicon glyphicon-home"></span>你好,用户名&nbsp;</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">退出</a>
+						</li>
+
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="cart.html"><span class="glyphicon glyphicon-shopping-cart" style="color: red;"></span>&nbsp;购物车0件</a>
+						</li>
+						<li>
+							<a href="order.html">我的订单</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">我的账户 <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="index.html">个人设置</a>
+								</li>
+								<li>
+									<a href="password.html">修改密码</a>
+								</li>
+								<li>
+									<a href="address.html">收货地址</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">我的收藏 <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="collect_goods.html">收藏的宝贝</a>
+								</li>
+								<li>
+									<a href="collect_store.html">收藏的店铺</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">卖家中心 <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="../shop/myshop.html">我的店铺</a>
+								</li>
+								<li>
+									<a href="../substore.html">管理店铺</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!--标题-->
+		<div class="log">
+			<nav class="navbar navbar-default" role="navigation" style="background-color:mediumseagreen;height: 70px;">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav" style="line-height: 70px;margin-top: 10px;font-size: 18px;color: white;">
+							<li>
+								<a href="#"><img src="../img/0561.png" style="height:60px;margin-top:-20px;" /></a>
+							</li>
+							<!--<li>
+								<a href="#">会员首页</a>
+							</li>-->
+							<li>
+								<a href="index.html">个人资料</a>
+							</li>
+
+						</ul>
+
+						<ul class="nav navbar-nav navbar-right" style="line-height: 70px;margin-top: 10px;font-size: 18px;color: white;">
+							<li>
+								<a href="../index.html">返回首页&nbsp;<span class="glyphicon glyphicon-leaf" style="color: white;"></span></a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!--我的订单内容-->
+		<div class="content" style="max-width:none !important;">
+			<div class="content-con">
+				<div class="content-con person">
+					<a href="#"><span class="glyphicon glyphicon-user" style="font-size:45px;margin-left:6px;"></span></a>
+				</div>
+				<div class="content-con cont">
+					<span style="font-size:18px;">张，</span><span>欢迎你！</span><br />
+					<!--<span style="color: green;">登录IP:</span><span>0.0.0.0</span><span style="color: green;">&nbsp;&nbsp;登录时间：</span><span>2016-09-16</span>-->
+				</div>
+			</div>
+			<!--订单内容-->
+
+			<div class="order-content">
+				<div class="col-md-2 col-xs-2 left">
+					<div class="indexLeft">
+						<div class="indexLeft x1">
+							<span class="glyphicon glyphicon-calendar">我要开店</span>
+						</div>
+						<div class="indexLeft x2">
+							<span class="glyphicon glyphicon-folder-close" style="color: green;font-size:16px;float: left;"><b style="font-size:18px;color: black;">订单中心</b></span><br /><br />
+							<a href="../order.html">我的订单</a><br /><br />
+							<a href="account.html">退货列表</a><br /><br />
+							<a href="rights_order.html">维权列表</a><br /><br />
+						</div>
+						<div class="indexLeft x2">
+							<span class="glyphicon glyphicon-star" style="color:red;font-size: 16px;float: left;"><b style="font-size:18px;color: black;">收藏中心</b></span><br /><br />
+							<a href="#" style="color: limegreen;">商品收藏</a><br /><br />
+							<a href="collect_store.html">店铺收藏</a><br /><br />
+							<a href="attention_store.html">店铺足迹</a><br /><br />
+						</div>
+						<div class="indexLeft x2">
+							<span class="glyphicon glyphicon-cog" style="color:blue;font-size: 16px;float: left;"><b style="font-size:18px;color: black;">个人中心</b></span><br /><br />
+							<a href="address.html">收货地址</a><br /><br />
+							<a href="password.html">修改密码</a><br /><br />
+							<a href="index.html">个人资料</a><br /><br />
+						</div>
+						<div class="indexLeft x2" style="height: 100px;">
+							<span class="glyphicon glyphicon-home" style="color:yellow;font-size: 16px;float: left;"><b style="font-size:18px;color: black;">资产中心</b></span><br /><br />
+							<a href="coupon.html">优惠券</a><br /><br />
+						</div>
+						<!--<div class="indexLeft x2" style="height: 150px;">
+							<span class="glyphicon glyphicon-flag" style="color: #5BC0DE;font-size: 16px;">&nbsp;</span><b style="font-size:18px;">活动中心</b><br /><br />
+							<a href="#">我的拼团</a><br /><br />
+							<a href="#">我的夺宝</a><br /><br />
+						</div>-->
+					</div>
+
+				</div>
+				<div class="col-md-10 col-xs-10 right">
+					<!--导航-->
+					<ul id="myTab" class="nav nav-tabs" style="border: 1px solid #D7D7D7;width: 100%;height:45px;">
+						<li class="active">
+							<a href="#page" data-toggle="tab" class="active" style="color: green;font-family: '微软雅黑';border-top:3px solid forestgreen ;">
+								商品收藏
+							</a>
+						</li>
+					</ul>
+					<!--内容-->
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade in active" id="page">
+							<div class="table-responsive">
+								<table class="table table-bordered" style="text-align: center;background:#E6E6E6">
+									<thead>
+										<tr>
+											<th>商品</th>
+											<th>价格</th>
+											<th>库存</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="feeter">
+			<span>Copyrights ©2016-2017 商店</span>&nbsp;&nbsp;
+			<span>联系人QQ:74859989</span>
+		</div>
+
+	</body>
+
+</html>

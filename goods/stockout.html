@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>店铺管理--已售磐的商品</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style2.css" />
+		<link rel="stylesheet" href="../css/goods.css" />
+		<!--<link rel="stylesheet" href="css/jquery.searchableSelect.css" />-->
+		<script type="text/javascript" src="../js/jquery-3.0.0.js"></script>
+		<script type="text/javascript" src="../js/jquery.searchableSelect.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<style>
+		/*视口小于768px时*/
+			@media screen and (max-width:768px) {
+				body{
+					min-width:1500px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+				<a class="navbar-brand" href="#"><img src="../img/0561.png" style="margin-top:-8px;" /></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+
+					<li>
+						<a href="#" style="color: #FF4500;border-bottom: 2px solid #FF4500;">商品</a>
+					</li>
+					<li>
+						<a href="../dashboard.html">财务/订单</a>
+					</li>
+					<li>
+						<a href="../member.html">会员管理</a>
+					</li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#">用户名</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">设置 <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="../shop/company.html">公司设置</a>
+							</li>
+							<li>
+								<a href="../shop/personal.html">账号设置</a>
+							</li>
+							<li>
+								<a href="../login.html">退出登录</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!--商品内容-->
+		<div class="goods" style="max-width:none !important;">
+			<div class="col-md-2 col-xs-2">
+				<!--左边导航-->
+				<div class="left-side">
+					<a href="create.html">
+						<div class="dv" style="color: red;"><span>发布商品</span></div>
+					</a>
+					<a>
+						<div class="dv sd"><span>商品管理</span></div>
+					</a>
+					<a href="../substore.html">
+						<div class="dv"><span>出售中的商品</span></div>
+					</a>
+					<a>
+						<div class="dv" style="color: blue;"><span>已售磐的商品</span></div>
+					</a>
+					<a href="soldout.html">
+						<div class="dv"><span>仓库中的商品</span></div>
+					</a>
+					<a href="category.html">
+						<div class="dv"><span>商品分组</span></div>
+					</a>
+					<a>
+						<div class="dv sd"><span>评论管理</span></div>
+						<a href="product_comment.html">
+							<div class="dv"><span>商品评价</span></div>
+						</a>
+						<a href="store_comment.html">
+							<div class="dv"><span>店铺评价</span></div>
+						</a>
+						<a href="subject.html">
+							<div class="dv sd"><span>导购管理</span></div>
+						</a>
+						<a>
+							<div class="dv"><span>导购专题</span></div>
+						</a>
+				</div>
+			</div>
+
+			<!--右边内容-->
+			<div class="col-md-10 col-xs-10">
+				<div class="right-side">
+					<div class="col-md-4 col-xs-4">
+						<span>已售磐的商品</span>
+					</div>
+					<div class="col-md-8 col-xs-8">
+						<div class="col-md-8 col-xs-8">
+							<span>
+                    	<select style="height: 30px;">
+                    		<option>导出当前类商品</option>
+                    		<option>导出全部商品</option>
+                    	</select>
+                    	</span>
+							<span>
+                    		<button class="btn btn-primary btn-sm">商品导出</button>
+                    	</span>
+							<span>
+                        <select style="height: 30px;">
+                    		<option>所有分组</option>
+                    	</select>
+                    	</span>
+						</div>
+
+						<div class="col-md-4 col-xs-4">
+							<div class="input-group" style="height: 30px;">
+								<span class="input-group-btn">
+			    	            <button class="btn btn-default btn-md">
+			    	                <span class="glyphicon glyphicon-search"></span>
+								</button>
+								</span>
+								<input type="text" class="form-control" placeholder="search">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-xs-12">
+					<div class="right-side-content">
+						<div class="first">
+						<span>还没有相关数据</span>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="footer">
+			<span>@evxun.com</span>
+		</div>
+	</body>
+
+</html>

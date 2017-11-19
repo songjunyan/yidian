@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>财务订单--财务/订单</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style2.css" />
+		<link rel="stylesheet" href="css/goods.css" />
+		<link rel="stylesheet" href="css/dashboard.css" />
+		<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<style>
+			@media screen and (max-width:768px) {
+				body {
+					width:1550px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+				<a class="navbar-brand" href="#"><img src="img/0561.png" style="margin-top:-8px;" /></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+
+					<li>
+						<a href="substore.html">商品</a>
+					</li>
+					<li>
+						<a href="#" style="color: #FF4500;border-bottom: 2px solid #FF4500;">财务/订单</a>
+					</li>
+					<li>
+						<a href="member.html">会员管理</a>
+					</li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#">用户名</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">设置 <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="shop/company.html">公司设置</a>
+							</li>
+							<li>
+								<a href="shop/personal.html">账号设置</a>
+							</li>
+							<li>
+								<a href="login.html">退出登录</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!--商品内容-->
+		<div class="goods" style="max-width:none !important;">
+			<div class="col-md-2 col-xs-2">
+				<!--左边导航-->
+				<div class="left-side">
+					<a>
+						<div class="dv" style="color:blue;"><span>订单情况</span></div>
+					</a>
+					<a href="dashboard/all.html">
+						<div class="dv"><span>所有订单</span></div>
+					</a>
+					<a href="dashboard/selffetch.html">
+						<div class="dv"><span>到店自提订单</span></div>
+					</a>
+					<a href="dashboard/codpay.html">
+						<div class="dv"><span>货到付款订单</span></div>
+					</a>
+					<a href="dashboard/order_return.html">
+						<div class="dv"><span>退货列表</span></div>
+					</a>
+					<a href="dashboard/order_rights.html">
+						<div class="dv"><span>维权列表</span></div>
+					</a>
+					<a href="dashboard/star.html">
+						<div class="dv"><span>加星订单</span></div>
+					</a>
+					<a href="dashboard/activity.html">
+						<div class="dv"><span>活动订单</span></div>
+					</a>
+					<a href="dashboard/delivery.html">
+						<div class="dv"><span>物流工具</span></div>
+					</a>
+					<a href="dashboard/add.html">
+						<div class="dv"><span>添加订单</span></div>
+					</a>
+					<a href="dashboard/orderprint.html">
+						<div class="dv"><span>订单打印机</span></div>
+					</a>
+					<a>
+						<div class="dv sd"><span>财务管理</span></div>
+					</a>
+					<a>
+						<div class="dv"><span>财务概况</span></div>
+					</a>
+					<a>
+						<div class="dv"><span>平台对账</span></div>
+					</a>
+					<a>
+						<div class="dv"><span>分销商对账</span></div>
+					</a>
+					<a>
+						<div class="dv"><span>供货商对账</span></div>
+					</a>
+					<a>
+						<div class="dv"><span>经销商对账</span></div>
+					</a>
+				</div>
+			</div>
+
+			<!--右边内容-->
+			<div class="col-md-10 col-xs-10">
+				<div class="right-side">
+					<div class="side-head">
+						<div class="col-md-2 col-xs-2">
+							<span class="b">0</span><br />
+							<span>7天下单笔数</span>
+						</div>
+						<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+							<span class="b">0</span><br />
+							<span>待付款</span>
+						</div>
+						<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+							<span class="b">0</span><br />
+							<span>待发货</span>
+						</div>
+						<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+							<span class="b">0</span><br />
+							<span>已发货</span>
+						</div>
+						<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+							<span class="b">￥：0.00</span><br />
+							<span>7天收入</span>
+						</div>
+						<div class="col-md-2 col-xs-2" style="border-left: 1px dotted #DFDFDF;">
+							<span class="b">￥：0.00</span><br />
+							<span>总销售额</span>
+						</div>
+					</div>
+					<!--折线图-->
+					<div class="side-con">
+						<div class="side-con-conent">
+							<div class="col-md-6 col-xs-6">
+								<span><b>7天订单</b>&nbsp;详情>></span>
+							</div>
+							<div class="col-md-5 col-xs-5">
+								<div class="mg">
+									<span><b>下单笔数：</b>所有用户的下单总数。</span><br />
+									<span><b>付款订单：</b>已付款的订单总数</span><br />
+									<span><b>发货订单：</b>已发货的订单总数。</span>
+								</div>
+							</div>
+							<div class="col-md-1 col-xs-1">
+								<span class="glyphicon glyphicon-question-sign" style="font-size: 16px;color:#FFFF00" id="emg"></span>
+							</div>
+							<script>
+								$(function() {
+									$("#emg").mouseover(function() {
+										$(".mg").show();
+									});
+									$("#emg").mouseleave(function() {
+										$(".mg").hide();
+									});
+								});
+							</script>
+
+							<div class="header2">
+								<div class="col-md-4 col-xs-4">
+									<span class="b">0</span><br />
+									<span>昨日下单笔数</span>
+								</div>
+								<div class="col-md-4 col-xs-4">
+									<span class="b">0</span><br />
+									<span>昨日付款订单</span>
+								</div>
+								<div class="col-md-4 col-xs-4">
+									<span class="b">0</span><br />
+									<span>昨日发货订单</span>
+								</div>
+							</div>
+
+							<div class="col-md-12 col-xs-12">
+								<script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+								<script src="http://cdn.hcharts.cn/highcharts/modules/exporting.js"></script>
+								<div id="container" style="width: 100%;height: 400px;"></div>
+								<script>
+									$(function() {
+										$('#container').highcharts({
+											title: {
+												text: '财务/订单详情',
+												x: -20 //center
+											},
+											subtitle: {
+												text: 'From: @evxun.com',
+												x: -20
+											},
+											xAxis: {
+												categories: ['2016-09-15', '2016-09-16', '2016-09-17', '2016-09-18', '2016-09-19'
+												,'2016-09-20','2016-09-21'
+												]
+											},
+											yAxis: {
+												title: {
+													text: '下单笔数（个）'
+												},
+												plotLines: [{
+													value: 0,
+													width: 1,
+													color: '#808080'
+												}]
+											},
+											tooltip: {
+												valueSuffix: '个'
+											},
+											legend: {
+												layout: 'vertical',
+												align: 'right',
+												verticalAlign: 'middle',
+												borderWidth: 0
+											},
+											series: [{
+												name: '下单笔数',
+												data: [0, 0, 3, 4, 1, 3, 2]
+											},{
+												name: '付款订单',
+												data: [0, 0, 3, 2, 4, 1, 3]
+											}, {
+												name: '发货订单',
+												data: [0, 4, 0, 1,0, 1, 2]
+											}]
+										});
+									});
+								</script>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="footer">
+				<span>@evxun.com</span>
+			</div>
+	</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>购物车</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/font-awesome.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+		<style>
+			@media screen and (max-width:1000px) {
+				.hideitems {
+					display: none;
+				}
+			}
+			@media screen and (min-width:320px) {
+				body {
+					width:1550px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部导航-->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+					<a class="navbar-brand" href="#" style="font-size: 14px;"><span class="glyphicon glyphicon-home"></span>你好,用户名&nbsp;</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">退出</a>
+						</li>
+
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#"><span class="glyphicon glyphicon-shopping-cart" style="color: red;"></span>&nbsp;购物车0件</a>
+						</li>
+						<li>
+							<a href="order.html">我的订单</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">我的账户 <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="order/index.html">个人设置</a>
+								</li>
+								<li>
+									<a href="order/password.html">修改密码</a>
+								</li>
+								<li>
+									<a href="order/password.html">收货地址</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">我的收藏 <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="order/collect_goods.html">收藏的宝贝</a>
+								</li>
+								<li>
+									<a href="order/collect_store.html">收藏的店铺</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">卖家中心 <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="shop/myshop.html">我的店铺</a>
+								</li>
+								<li>
+									<a href="substore.html">管理店铺</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!--标题-->
+		<div class="log">
+			<nav class="navbar navbar-default" role="navigation" style="background-color:mediumseagreen;height: 70px;">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav" style="line-height: 70px;margin-top: 10px;font-size: 18px;color: white;">
+							<li>
+								<a href="#"><img src="img/0561.png" style="height:60px;margin-top:-20px;"/></a>
+							</li>
+							<li>
+								<a href="order/index.html">会员首页</a>
+							</li>
+							<li>
+								<a href="order/index.html">个人资料</a>
+							</li>
+
+						</ul>
+
+						<ul class="nav navbar-nav navbar-right" style="line-height: 70px;margin-top: 10px;font-size: 18px;color: white;">
+							<li>
+								<a href="index.html">返回首页&nbsp;<span class="glyphicon glyphicon-leaf" style="color: white;"></span></a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!--我的购物车内容-->
+		<div class="content" style="max-width:none !important;">
+			<span>您的位置：首页>会员中心>我的订单</span>
+			<div class="contents">
+				<div class="jin">
+					<div class="col-md-4 col-xs-4">
+						<div class="col-md-4-one">
+							<div class="hieght"></div>
+							<div class="hieghts"><span class="glyphicon glyphicon-ok-circle"></span></div>
+							<div class="hieght"></div><br />
+							<div class="height-font">
+							<span>购物车</span>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-md-4 col-xs-4">
+						<div class="col-md-4-one">
+							<div class="hieght"></div>
+							<div class="hieghts"><span class="glyphicon glyphicon-ok-circle"></span></div>
+							<div class="hieght"></div><br />
+							<div class="height-font">
+							<span>确认收货地址</span>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-md-4 col-xs-4">
+						<div class="col-md-4-one">
+							<div class="hieght"></div>
+							<div class="hieghts"><span class="glyphicon glyphicon-ok-circle"></span></div>
+							<div class="hieght"></div><br />
+							<div class="height-font">
+							<span>支付</span>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+			<table class="table">
+				<thead >
+					<td class="active">宝贝信息</td>
+					<td class="active">型号</td>
+					<td class="active">单价</td>
+					<td class="active">数量</td>
+					<td class="active">小计</td>
+					<td class="active">操作</td>
+				</thead>
+				<tr class="warning">
+				  <td>连衣裙</td>
+				  <td>3414</td>
+				  <td>170.00</td>
+				  <td>1</td>
+				  <td>23</td>
+				  <td>支付</td>
+				</tr>
+			</table>
+        <div class="tall">
+        	<span class="click">清空购物车</span>
+        	<div class="tall-left">
+        	<span>结算</span>
+        	</div>
+        	<b>共<strong>&nbsp;0&nbsp;</strong>件&nbsp;&nbsp;&nbsp;合计（不含运费）：<strong>￥0</strong></b>
+        	
+        </div>
+		</div>
+
+		<div class="feeter" style="position:fixed;">
+			<span>Copyrights ©2016-2017 商店</span>&nbsp;&nbsp;
+			<span>联系人QQ:74859989</span>
+		</div>
+
+	</body>
+
+</html>
